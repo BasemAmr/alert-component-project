@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# AlertBox Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and customizable AlertBox component library built with React and SCSS. This library provides pre-styled alert boxes for different states like success, error, info, default, and warning, making it easy to show user notifications in your web application.
 
-Currently, two official plugins are available:
+**Features:**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Five Alert States: Success, Error, Info, Default, and Warning.
+* Customizable: Easily modify the styles using SCSS variables and mixins.
+* Responsive Design: The components adapt well to different screen sizes.
+* Icon Support: Includes Lucide icons to visually represent alert states.
 
-## Expanding the ESLint configuration
+**Installation**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the Repository:
 
-- Configure the top-level `parserOptions` property like this:
+    bash
+   
+        git clone [https://github.com/your-username/alertbox-component.git](https://github.com/your-username/alertbox-component.git)
+cd alertbox-component 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Install Dependencies:
+`npm install`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. Start the Development Server:
+`npm start`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+**Usage**
+To use the AlertBox component, simply import it into your project and provide the necessary props like type, icon, title, and description.
+
+    import { CheckCircle, AlertCircle } from "lucide-react";
+    import AlertBox from "./components/AlertBox";
+
+    <AlertBox 
+      type="alert-success"
+      icon={<CheckCircle />}
+      title="Operation Successful"
+      description="The action was completed successfully without any issues."
+    />;
+
+    <AlertBox 
+      type="alert-error"
+      icon={<AlertCircle />}
+      title="Error Occurred"
+      description="An unexpected error occurred. Please try again later."
+    />; 
+
+
+**SCSS Customization**
+Customize the alert styles using the provided SCSS mixins and variables. You can modify the colors or create your own alert styles:
+
+    // Define custom styles for alert states
+    @include alert('alert-custom', #000, #f0f0f0, #333);
+
+
+**File Structure**
+* src/components/AlertBox.js: The main AlertBox component.
+* src/index.scss: SCSS styles, including the mixins * and default alert styles.
+src/App.js: Example usage of the AlertBox component.
+
+**Contributing**
+Contributions are welcome! Please submit a pull request or open an issue for feature requests and bug reports.
+
+**License**
+This project is licensed under the MIT License.
+
