@@ -1,0 +1,102 @@
+// Error Colors
+$errorBorderColor: rgba(255, 25, 0, 0.332);
+$errorBg: rgb(192 29 29 / 15%);
+$errorColor: #ef8d8dfa;
+
+// Success Colors
+$successBorderColor: rgba(0, 128, 0, 0.332);
+$successBg: rgb(34 139 34 / 15%);
+$successColor: #8fbc8f;
+
+// Info Colors
+$infoBorderColor: rgba(0, 123, 255, 0.332);
+$infoBg: rgb(70 130 180 / 15%);
+$infoColor: #add8e6;
+
+// Default Colors
+$defaultBorderColor: rgba(128, 128, 128, 0.332);
+$defaultBg: rgb(169 169 169 / 15%);
+$defaultColor: #d3d3d3;
+
+// Warning Colors
+$warningBorderColor: rgba(255, 165, 0, 0.332);
+$warningBg: rgb(255 165 0 / 15%);
+$warningColor: #ffd700;
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin alert($name, $border, $bgColor,$color){
+
+    .#{$name} {
+        border: 2px dashed $border;
+        border-radius: 1rem;
+        padding: 2rem;
+        background-color: $bgColor;
+        color: $color;
+    
+        .alert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            div {
+                display: flex;
+                gap: 1.5rem;
+            }
+            .close {
+                cursor: pointer;
+                margin-right: 2rem;
+            }
+        }
+        p {
+            line-height: 1.5;
+        }
+    }
+}
+
+// Success Alert
+@include alert(
+  'alert-success',
+  $successBorderColor,
+  $successBg,
+  $successColor
+);
+
+// Error Alert
+@include alert(
+  'alert-error',
+  $errorBorderColor,
+  $errorBg,
+  $errorColor
+);
+
+// Info Alert
+@include alert(
+  'alert-info',
+  $infoBorderColor,
+  $infoBg,
+  $infoColor
+);
+
+// Default Alert
+@include alert(
+  'alert-default',
+  $defaultBorderColor,
+  $defaultBg,
+  $defaultColor
+);
+
+// Warning Alert
+@include alert(
+  'alert-warning',
+  $warningBorderColor,
+  $warningBg,
+  $warningColor
+);

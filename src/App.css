@@ -1,0 +1,16 @@
+.container {
+    max-width: "100vw";
+    min-height: "100vh";
+    background-color: "black";
+    padding:"2rem 0";
+    display: "flex";
+    flex-direction: "column";
+    align-items: "center"
+}
+.boxes {
+    display: "flex";
+    align-items: "center";
+    flex-direction: "column";
+    gap: 40;
+    width: "70%";
+}
