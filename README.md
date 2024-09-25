@@ -1,5 +1,5 @@
-# AlertBox Component Library
-
+# [AlertBox Component Library](https://basemamr.github.io/alert-component-project/)
+`Click for Preview`
 A simple and customizable AlertBox component library built with React and SCSS. This library provides pre-styled alert boxes for different states like success, error, info, default, and warning, making it easy to show user notifications in your web application.
 
 **Features:**
